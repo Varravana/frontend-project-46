@@ -1,0 +1,7 @@
+{"version": 2, "width": 130, "height": 18, "timestamp": 1750942660, "env": {"SHELL": "/bin/bash", "TERM": "xterm-256color"}}
+[0.236875, "o", "\u001b[?2004h\u001b]0;varravana@Mashennik: ~/frontend-project-46\u0007\u001b[01;32mvarravana@Mashennik\u001b[00m:\u001b[01;34m~/frontend-project-46\u001b[00m$ "]
+[3.267398, "o", "\u001b[7m./bin/gendiff.js file1.json file2.json\u001b[27m"]
+[4.515522, "o", "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b./bin/gendiff.js file1.json file2.json\r\n\u001b[?2004l\r"]
+[4.610508, "o", "{\r\n- follow: false\r\n  host: hexlet.io\r\n- proxy: 123.234.53.22\r\n- timeout: 50\r\n+ timeout: 20\r\n+ verbose: true\r\n}\r\n"]
+[4.618115, "o", "\u001b[?2004h\u001b]0;varravana@Mashennik: ~/frontend-project-46\u0007\u001b[01;32mvarravana@Mashennik\u001b[00m:\u001b[01;34m~/frontend-project-46\u001b[00m$ "]
+[11.811633, "o", "\u001b[?2004l\r\r\nexit\r\n"]
