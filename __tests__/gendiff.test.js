@@ -4,8 +4,12 @@ import path from 'path';
 const getPath = (fileName) => path.resolve(process.cwd(), fileName);
 
 test ('parser ', () => {
-    expect(parser(
-        getPath('file1.json'),
-        getPath('file2.json')
-    )).toBe(2);
-})
+    expect(parser('file1.json', 'file2.json')).toBe(`{
+- follow: false
+  host: hexlet.io
+- proxy: 123.234.53.22
+- timeout: 50
++ timeout: 20
++ verbose: true
+}`);
+});
