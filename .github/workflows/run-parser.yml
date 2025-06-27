@@ -6,4 +6,4 @@ jobs:
     steps: 
       - uses: actions/checkout@v4
       - run: make install
-      - run: male lint
+      - run: make lint
