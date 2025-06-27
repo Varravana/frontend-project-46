@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import isEqual from 'lodash'
+
 
 export default (a, b) => {
   const comand1 = JSON.parse(fs.readFileSync(path.resolve(a), 'utf-8'))
