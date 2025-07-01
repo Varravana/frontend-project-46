@@ -1,9 +1,12 @@
 import fs from 'fs'
 import path from 'path'
+import parsers from './parsers.js'
 
 export default (a, b) => {
-  const comand1 = JSON.parse(fs.readFileSync(path.resolve(a), 'utf-8'))
-  const comand2 = JSON.parse(fs.readFileSync(path.resolve(b), 'utf-8'))
+  const format1 = path.extname(a)
+  const format2 = path.extname(b)
+  const comand1 = parsers(fs.readFileSync(path.resolve(a), 'utf-8'), format1)
+  const comand2 = parsers(fs.readFileSync(path.resolve(b), 'utf-8'), format2)
 
   const genDiff = (obj1, obj2) => {
     const keys = [...new Set ([...Object.keys(obj1), ...Object.keys(obj2)])].sort()
