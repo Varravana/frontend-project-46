@@ -1,31 +1,21 @@
 import fs from 'fs'
 import path from 'path'
 import parsers from './parsers.js'
+import getDiff from './getDiff.js'
+import getDiff2 from './getDiff2.js'
 
-export default (a, b) => {
-  const format1 = path.extname(a)
-  const format2 = path.extname(b)
-  const comand1 = parsers(fs.readFileSync(path.resolve(a), 'utf-8'), format1)
-  const comand2 = parsers(fs.readFileSync(path.resolve(b), 'utf-8'), format2)
-
-  const genDiff = (obj1, obj2) => {
-    const keys = [...new Set ([...Object.keys(obj1), ...Object.keys(obj2)])].sort()
-
-    const diff = keys.map((key) => {
-      if (!Object.hasOwn(obj2, key)) {
-        return `- ${key}: ${obj1[key]}`
-      }
-      if (!Object.hasOwn(obj1, key)) {
-        return `+ ${key}: ${obj2[key]}`
-      }
-      if (obj1[key] !== obj2[key]) {
-        const ret = `- ${key}: ${obj1[key]}\n+ ${key}: ${obj2[key]}`
-        return ret
-      }
-      return `  ${key}: ${obj1[key]}`
-    })
-    return `{\n${diff.join('\n')}\n}`
-  }
-
-  return genDiff(comand1, comand2)
+const getParsData = (filePath) => {
+  const fileFormat = path.extname(filePath);
+  const data = fs.readFileSync(path.resolve(filePath), 'utf-8');
+  return parsers(data, fileFormat)
 }
+
+
+const parser = (a, b) => {
+
+  const comand1 = getParsData(a);
+  const comand2 = getParsData(b);
+const diff = getDiff2(comand1, comand2);
+return JSON.stringify(diff, null, 2);
+};
+export default parser
