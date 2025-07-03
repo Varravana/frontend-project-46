@@ -19,7 +19,5 @@ const parser = (a, b, format = 'stylish') => {
     const result = stylish(diff)
     return result
   }
-
-
 }
 export default parser
