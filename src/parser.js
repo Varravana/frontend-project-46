@@ -2,6 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import parsers from './parsers.js'
 import getDiff2 from './getDiff2.js'
+import toFormat from './formatters/index.js'
 import stylish from './formatters/stylish.js'
 
 const getParsData = (filePath) => {
@@ -14,10 +15,8 @@ const parser = (a, b, format = 'stylish') => {
   const comand1 = getParsData(a)
   const comand2 = getParsData(b)
   const diff = getDiff2(comand1, comand2)
-
-  if (format === 'stylish') {
-    const result = stylish(diff)
-    return result
-  }
+  return stylish(diff)
+return toFormat(diff, format)
+  
 }
 export default parser
