@@ -1,5 +1,6 @@
 import stylish from "./stylish.js"
 import plain from "./plain.js"
+import toJson from "./toJson.js"
 
 const toFormat = (data, format) => {
    switch (format){
@@ -8,6 +9,9 @@ const toFormat = (data, format) => {
   }
   case 'plain': {
     return plain(data)
+  }
+  case 'json': {
+    return toJson(data)
   }
   } 
 }

@@ -15,7 +15,6 @@ const parser = (a, b, format = 'stylish') => {
   const comand1 = getParsData(a)
   const comand2 = getParsData(b)
   const diff = getDiff2(comand1, comand2)
-  return stylish(diff)
 return toFormat(diff, format)
   
 }
