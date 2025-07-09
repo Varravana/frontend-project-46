@@ -1,10 +1,10 @@
 const makeString = (key, data, lvl, chang = ' ') => {
   if (typeof data !== 'object' || data === null) {
-    return `\n${' '.repeat(lvl)}${chang} ${key}: ${data}`
+    return `\n ${' '.repeat(lvl)}${chang} ${key}: ${data}`
   }
 
   const newData = Object.keys(data).map(elem => makeString(elem, data[elem], lvl + 4))
-  return `\n${' '.repeat(lvl)}${chang} ${key}: {${newData}\n${' '.repeat(lvl + 2)}}`
+  return `\n ${' '.repeat(lvl)}${chang} ${key}: {${newData}\n${' '.repeat(lvl + 2)}}`
 }
 
 const stylish = (data, depth = 1) => data.map((item) => {
