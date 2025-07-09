@@ -1,6 +1,6 @@
 const makeString = (key, data, lvl, chang = ' ') => {
   if (typeof data !== 'object' || data === null) {
-    return `\n ${' '.repeat(lvl)}${chang} ${key}: ${data} `
+    return `\n ${' '.repeat(lvl)}${chang} ${key}: ${data}`
   }
 
   const newData = Object.keys(data).map(elem => makeString(elem, data[elem], lvl + 4))
