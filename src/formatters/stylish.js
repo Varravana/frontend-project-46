@@ -7,7 +7,7 @@ const makeString = (key, data, lvl, chang = ' ') => {
   return `\n${' '.repeat(lvl)}${chang} ${key}: {${newData}\n${' '.repeat(lvl + 2)}}`
 }
 
-const stylish = (data, depth = 0) => data.map((item) => {
+const stylish = (data, depth = 1) => data.map((item) => {
   const {
     type, key, newValue, oldValue, children,
   } = item
