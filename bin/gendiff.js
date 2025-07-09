@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { Command } from 'commander'
-import parser from '../src/parser.js'
+import genDiff from '../src/parser.js'
 
 const program = new Command()
 
@@ -11,7 +11,7 @@ program
   .version('0.0.1', '-V, --version ', 'output the version number')
   .option('-f, --format [type]', 'output format', 'stylish')
   .action ((a, b, option) => {
-    console.log (parser(a, b, option.format))
+    console.log (genDiff(a, b, option.format))
   })
 
-program.parse()
+program.parse(process.argv)
