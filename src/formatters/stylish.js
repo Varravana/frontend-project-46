@@ -16,7 +16,7 @@ const stylish = (data, depth = 1) => data.map((item) => {
 
   switch (type) {
     case 'tree': {
-      return `\n${indent} ${key}: {${stylish(children, curentDepth + 2)}\n${indent}}`
+      return `\n${indent} ${key}: {${stylish(children, curentDepth + 2)}\n${indent} }`
     }
     case 'added': {
       return makeString(key, newValue, depth, '+')
