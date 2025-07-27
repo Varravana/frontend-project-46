@@ -3,11 +3,11 @@ const makeString = (key, data, lvl, chang = ' ') => {
     return `\n ${' '.repeat(lvl)}${chang} ${key}: ${data}`
   }
 
-  const newData = Object.keys(data).map(elem => {
+  const newData = Object.keys(data).map((elem) => {
     return makeString(elem, data[elem], lvl + 4)
   })
 
-  return `\n ${' '.repeat(lvl)}${chang} ${key}: {${newData.join("")}\n${' '.repeat(lvl + 2)} }`
+  return `\n ${' '.repeat(lvl)}${chang} ${key}: {${newData.join('')}\n${' '.repeat(lvl + 2)} }`
 }
 
 const stylish = (data, depth = 1) => data.map((item) => {

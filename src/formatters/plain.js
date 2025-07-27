@@ -1,9 +1,12 @@
 const makeValue = (data) => {
-  if (typeof data === 'object' && data !==null) {
+  if (typeof data === 'object' && data !== null) {
     return `[complex value]`
   }
 
-  if (typeof data === 'string') { return `'${data}'`}
+  if (typeof data === 'string') {
+    return `'${data}'`
+  }
+
   return `${data}`
 }
 
