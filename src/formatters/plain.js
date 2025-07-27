@@ -1,5 +1,5 @@
 const makeValue = (data) => {
-  if (typeof data === 'object') {
+  if (typeof data === 'object' && data !==null) {
     return `[complex value]`
   }
 
