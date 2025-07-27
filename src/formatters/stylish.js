@@ -3,8 +3,11 @@ const makeString = (key, data, lvl, chang = ' ') => {
     return `\n ${' '.repeat(lvl)}${chang} ${key}: ${data}`
   }
 
-  const newData = Object.keys(data).map(elem => makeString(elem, data[elem], lvl + 4))
-  return `\n ${' '.repeat(lvl)}${chang} ${key}: {${newData}\n${' '.repeat(lvl + 2)} }`
+  const newData = Object.keys(data).map(elem => {
+    return makeString(elem, data[elem], lvl + 4)
+  })
+
+  return `\n ${' '.repeat(lvl)}${chang} ${key}: {${newData.join("")}\n${' '.repeat(lvl + 2)} }`
 }
 
 const stylish = (data, depth = 1) => data.map((item) => {
@@ -22,6 +25,7 @@ const stylish = (data, depth = 1) => data.map((item) => {
       return makeString(key, newValue, depth, '+')
     }
     case 'deleted': {
+      console.log("newValue", key, newValue)
       return makeString(key, newValue, depth, '-')
     }
     case 'changed': {
