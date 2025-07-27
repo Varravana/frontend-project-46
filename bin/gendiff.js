@@ -7,11 +7,11 @@ const program = new Command()
 
 program
   .description('Compares two configuration files and shows a difference.')
-  .arguments('[filepath3] [filepath4]')
+  .arguments('<filepath1> <filepath2>')
   .version('0.0.1', '-V, --version ', 'output the version number')
   .option('-f, --format [type]', 'output format', 'stylish')
   .action ((a, b, option) => {
-    console.log (genDiff(a, b, option.format))
+    console.log(genDiff(a, b, option.format))
   })
 
 program.parse(process.argv)
