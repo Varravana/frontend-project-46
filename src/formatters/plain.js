@@ -1,8 +1,10 @@
 const makeValue = (data) => {
-  if (typeof data !== 'object' || data === null) {
-    return `${data}`
+  if (typeof data === 'object') {
+    return `[complex value]`
   }
-  return `[complex value]`
+
+  if (typeof data === 'string') { return `'${data}'`}
+  return `${data}`
 }
 
 const plain = (data, path = '') => data.map((item) => {
@@ -22,7 +24,7 @@ const plain = (data, path = '') => data.map((item) => {
       return `\nProperty '${curentKey}' was removed`
     }
     case 'changed': {
-      return `\nProperty '${curentKey}' was updated. From ${makeValue(oldValue)} to '${makeValue(newValue)}'`
+      return `\nProperty '${curentKey}' was updated. From ${makeValue(oldValue)} to ${makeValue(newValue)}`
     }
   }
 }).join('')
