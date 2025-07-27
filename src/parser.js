@@ -5,6 +5,10 @@ import getDiff2 from './getDiff2.js'
 import toFormat from './formatters/index.js'
 
 const getParsData = (filePath) => {
+  if(!filePath) {
+    return
+  }
+  
   const fileFormat = path.extname(filePath)
   const data = fs.readFileSync(path.resolve(filePath), 'utf-8')
   return parsers(data, fileFormat)
