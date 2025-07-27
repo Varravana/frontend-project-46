@@ -12,7 +12,7 @@ const getParsData = (filePath) => {
 
 const parser = (a, b, format = 'stylish') => {
   if(!a || !b) {
-    return
+  return toFormat([], format)
   }
 
   const comand1 = getParsData(a)
