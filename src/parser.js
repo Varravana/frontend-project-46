@@ -14,10 +14,7 @@ const parser = (a, b, format = 'stylish') => {
   const comand1 = getParsData(a)
   const comand2 = getParsData(b)
   const diff = getDiff2(comand1, comand2)
-  // console.log("hi", {
-  //   diff: diff.at(2),
-  //   toFormat: toFormat(diff, format)
-  // })
+
   return toFormat(diff, format)
 }
 export default parser

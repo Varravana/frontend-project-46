@@ -25,7 +25,6 @@ const stylish = (data, depth = 1) => data.map((item) => {
       return makeString(key, newValue, depth, '+')
     }
     case 'deleted': {
-      console.log("newValue", key, newValue)
       return makeString(key, newValue, depth, '-')
     }
     case 'changed': {
