@@ -22,7 +22,7 @@ const plain = (data, path = '') => data.map((item) => {
       return `\nProperty '${curentKey}' was removed`
     }
     case 'changed': {
-      return `\nProperty '${curentKey}' was updated. From '${makeValue(oldValue)}' to '${makeValue(newValue)}'`
+      return `\nProperty '${curentKey}' was updated. From ${makeValue(oldValue)} to '${makeValue(newValue)}'`
     }
   }
 }).join('')
