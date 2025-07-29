@@ -21,13 +21,13 @@ const plain = (data, path = '') => data.map((item) => {
       return `${plain(children, curentKey)}`
     }
     case 'added': {
-      return `\nProperty '${curentKey}' was added with value: ${makeValue(newValue)}`
+      return `Property '${curentKey}' was added with value: ${makeValue(newValue)}\n`
     }
     case 'deleted': {
-      return `\nProperty '${curentKey}' was removed`
+      return `Property '${curentKey}' was removed\n`
     }
     case 'changed': {
-      return `\nProperty '${curentKey}' was updated. From ${makeValue(oldValue)} to ${makeValue(newValue)}`
+      return `Property '${curentKey}' was updated. From ${makeValue(oldValue)} to ${makeValue(newValue)}\n`
     }
   }
 }).join('')
