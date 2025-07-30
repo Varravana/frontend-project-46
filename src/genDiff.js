@@ -15,12 +15,10 @@ const genDiff = (obj1, obj2) => {
     }
     if (!_.isEqual(obj1[key], obj2[key])) {
       return {
-        key, type: 'changed', oldValue: obj1[key], newValue: obj2[key],
-      }
+        key, type: 'changed', oldValue: obj1[key], newValue: obj2[key] }
     }
     return {
-      key, type: 'unchanged', newValue: obj1[key],
-    }
+      key, type: 'unchanged', newValue: obj1[key] }
   })
 
   return diff
